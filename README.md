@@ -14,6 +14,7 @@ The application listens on port 8080 and can be easily run as local service.
     - changing the Python code to `run(host='127.0.0.1', port=8080)`
     - restricting access with docker to localhost: `docker run -d --restart=always --name=codectool -p 127.0.0.1:8080:8080 codectool`
 - The File Upload function is basically unprotected: Too large files can crash the service. This could be mitigated by using a reverse proxy that can limit the max_body_size of an http request (e.g. nginx).
+- If a transformation fails (e.g. the provided encoded data can not be decoded with the chosen codec), the service will currently display an imternal error message
 
 ## Use with Phyton
 
